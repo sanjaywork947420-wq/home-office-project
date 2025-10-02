@@ -1,0 +1,72 @@
+/* DataTable.module.css */
+
+/* Container */
+.container {
+  overflow: hidden;
+  border-radius: 12px;
+  border: 1px solid #e5e7eb; /* light gray */
+  background: #ffffff;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+  transition: box-shadow 0.2s ease-in-out;
+
+}
+
+.container:hover {
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
+}
+
+/* Header */
+.header {
+  background: #313131;
+  border-bottom: 1px solid #e5e7eb;
+  color: white;
+}
+
+.headerCell {
+  font-weight: 600;
+  font-size: 0.95rem;
+  padding: 12px 16px;
+  text-align: left;
+  color: #ffffff; /* gray-700 */
+  text-align: center;
+  vertical-align: center;
+}
+
+/* Rows */
+.row {
+  transition: background 0.2s ease-in-out;
+}
+
+.row:hover {
+  background: #8bb2ff; /* gray-100 */
+  cursor: pointer;
+}
+
+/* Cells */
+.cell {
+  padding: 12px 16px;
+  border-bottom: 1px solid #e5e7eb;
+  font-size: 0.9rem;
+  color: #1f2937; /* gray-800 */
+  
+  /* here we cant add a display flex as the shadcn alredy use some other display so use a internal div inside this div then u can apply flex to it for now we are suign the method 1 whihc is using of  -->*/
+
+  text-align: center;
+  vertical-align: center;
+
+
+}
+
+.tableRow{
+    background: #000;
+}
+.tableRow:hover{
+    background: #3b3b3b;
+}
+/* Empty State */
+.empty {
+  text-align: center;
+  padding: 24px;
+  color: #9ca3af; /* gray-400 */
+  font-style: italic;
+}

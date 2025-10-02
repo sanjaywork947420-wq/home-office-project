@@ -1,0 +1,55 @@
+:root {
+  --drop-distance: 220px;
+  --stagger: 0.08s;
+  --duration: 200ms;
+}
+
+.wrap {
+  display: grid;
+  place-items: center;
+  height: 50px;
+  z-index: 1;
+  text-transform: capitalize;
+  /* background-color: red; */
+  
+}
+
+.falling {
+  display: inline-flex;
+  
+  font-size: 1.7rem;
+  /* letter-spacing: 0.005em; */
+  perspective: 800px;
+
+  color: rgb(0, 0, 0);
+}
+
+.letter {
+  display: inline-block;
+  transform: translateY(calc(var(--drop-distance) * -1)) rotate(-10deg) scale(0.98);
+  opacity: 0;
+  transform-origin: 50% 0%;
+  animation: drop var(--duration) cubic-bezier(.2,.9,.3,1) calc(var(--i) * var(--stagger)) forwards;
+}
+
+@keyframes drop {
+  0% {
+    transform: translateY(calc(var(--drop-distance) * -1)) rotate(-12deg) scale(0.96);
+    opacity: 0;
+  }
+  70% {
+    transform: translateY(6px) rotate(6deg) scale(1.02);
+    opacity: 1;
+  }
+  85% {
+    transform: translateY(-3px) rotate(-4deg) scale(0.995);
+  }
+  100% {
+    transform: translateY(0) rotate(0) scale(1);
+    opacity: 1;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .letter { animation: none; transform: none; opacity: 1; }
+}

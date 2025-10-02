@@ -1,0 +1,79 @@
+/* A reusable form container style */
+.formContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    background-color: rgba(255, 20, 224, 0.4);
+    backdrop-filter: blur(10px);
+   
+    padding: 20px 30px;
+  animation: formEnter 1s;
+
+
+}
+
+*{
+  text-transform: capitalize;
+}
+
+@keyframes formEnter {
+  0% {
+    opacity: 0;
+    transform: scale(0.3);
+  }
+  80% {
+    transform: scale(1.1);
+  }
+  100% {
+     backdrop-filter: blur(20px);
+     opacity: 1;
+  
+   
+  
+    transform: scale(1);
+  }
+}
+
+.title{
+    font-size: 35px;
+    text-transform: capitalize;
+    
+}
+/* Each field item */
+.formItem {
+    width: 100%;
+}
+
+/* Label styling */
+.formLabel {
+     
+}
+
+/* Input box */
+.formInput {
+     background-color: white;
+}
+
+.formInput:focus {
+      background-color: white;
+}
+
+/* Description text */
+.formDescription {
+   
+}
+
+/* Error message */
+.formMessage {
+     
+}
+
+/* Submit button */
+.submitButton {
+    cursor: pointer;
+}
+
+.submitButton:hover {
+}

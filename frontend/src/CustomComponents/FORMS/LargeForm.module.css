@@ -1,0 +1,65 @@
+/* A reusable form container style */
+.formContainer {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+
+    background-color: var(--color-blue-200);
+   
+    padding: 20px 50px;
+
+    grid-gap:10px 30px;
+    justify-items: center;
+    align-items: center;
+
+
+
+}
+
+
+.title{
+    font-size: 35px;
+    text-transform: capitalize;
+    grid-column: 1/3;
+    text-align: center;
+    
+}
+/* Each field item */
+.formItem {
+    width: 100%;
+}
+
+/* Label styling */
+.formLabel {
+     
+}
+
+/* Input box */
+.formInput {
+     background-color: white;
+}
+
+.formInput:focus {
+      background-color: white;
+}
+
+/* Description text */
+.formDescription {
+   
+}
+
+/* Error message */
+.formMessage {
+     
+}
+
+/* Submit button */
+.footerBtn {
+    cursor: pointer;
+    grid-column: 1/3;
+    width: 100%;
+    justify-self: center;
+    margin-top: 20px;
+}
+
+.submitButton:hover {
+}
