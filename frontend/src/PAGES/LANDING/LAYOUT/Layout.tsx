@@ -1,26 +1,36 @@
-import React from "react";
-import { SideBar } from "../../../CustomComponents/NAVIGATION/SideBar";
-import { NavBar } from "../../../CustomComponents/NAVIGATION/NavBar";
-import { Outlet } from "react-router-dom";
+import { useAppContext } from '@/CustomComponents/GLOBAL CONTEXT/GlobalContext';
+import { NavBar } from '@/CustomComponents/NAVIGATION/NavBar'
+import { SideBar } from '@/CustomComponents/NAVIGATION/SideBar'
+import "./layout.css"
+import React from 'react'
+import { Outlet } from 'react-router-dom'
+import { motion } from 'framer-motion';
 
 export default function Layout() {
+  const {state,updateState}=useAppContext();
+  const open =state.open;
   return (
-    <>
-      <div className="bg-blue-200 w-[100vw] h-[100vh]  grid overflow-hidden grid-cols-5">
-        <div className="nav col-span-5">
-          <NavBar />
-        </div>
-        <div className="sidebar">
-          <SideBar />
-        </div>
-        <div className="outlet bg-blue-400 col-span-4 flex justify-center  mt-12">
-          <div className="content flex items-center flex-col pt-32">
-           
-            <Outlet/>
-          </div>
-        </div>
+    
+   <motion.div
+  className="grid h-[100vh] grid-rows-[60px_1fr] overflow-hidden"
+  animate={{ gridTemplateColumns: open ? "260px 1fr" : "70px 1fr" }}
+  transition={{ type: "spring", stiffness: 200, damping: 25 }}
+>
+
+
+      <div className="top-nav bg-amber-200  col-span-12">
+        <NavBar/>
+
+
       </div>
-      
-    </>
-  );
+
+      <div className="sidebar  bg-red-200">
+        <SideBar/>
+      </div>
+
+      <div className="outlet bg-blue-400 ">
+        <Outlet/>
+      </div>
+    </motion.div>
+  )
 }

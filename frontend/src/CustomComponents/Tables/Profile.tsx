@@ -5,7 +5,8 @@ import { Data } from './default table/Data'
 
 export default function SampleTable() {
   return (
-    <div>
+    <div className='w-[100%] flex justify-center items-center h-[100%] flex-col'>
+      <h1 className='text-4xl mb-6'>profile</h1>
         <TableRenderer columns={columns} data={Data} />
     </div>
   )

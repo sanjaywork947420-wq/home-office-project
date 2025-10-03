@@ -52,7 +52,7 @@ export const NavBar = () => {
   };
 
   return (
-    <div className="w-full bg-gray-800 text-white flex items-center justify-between px-6 py-3 shadow-md">
+    <div className="w-full bg-gray-900 text-white flex items-center justify-between px-6 py-3 h-full shadow-md ">
       <h2 className="text-xl font-bold">Centralized IT Portal</h2>
 
       <div className="flex gap-6 items-center">

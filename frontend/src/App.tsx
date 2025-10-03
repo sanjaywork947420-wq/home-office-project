@@ -40,13 +40,7 @@ export default function App() {
       {/* Inject CSS variables globally */}
       <style>{`:root { ${cssVars} }`}</style>
 
-      <div
-        className="
-          flex flex-col
-          h-[100vh]
-          justify-center
-        "
-      >
+     
         {/* Navigation */}
         {/* <nav className="mb-6 space-x-4 p-6 fixed h-[50px] top-[0] text-white bg-brand-primary-dark w-[100%] flex items-center ">
           <Link to="/" className={`${styles.navbarlink}`}>
@@ -86,7 +80,7 @@ export default function App() {
             <Route path="/dashboard" element={<DashBoard />} />
           </Route>
         </Routes>
-      </div>
+      
     </>
   );
 }

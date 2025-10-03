@@ -3,6 +3,7 @@ export const columns: any = [
   {
     accessorKey: "SNo",
     header: "Sno.",
+    enableSorting: true,    
   },
   {
     accessorKey: "name",
