@@ -10,13 +10,15 @@ import SignupForm from "./CustomComponents/FORMS/SignupForm";
 import styles from "./CustomComponents/css styles/NavbarStyles.module.css";
 import SetPassword from "./CustomComponents/FORMS/SetPassword";
 import ApplyPasswordReset from "./CustomComponents/FORMS/ApplyPasswordReset";
-import SampleTable from "./CustomComponents/Tables/Profile";
-import ResetTable from "./CustomComponents/SideBar components/PasswordReset/ResetTable";
+import SampleTable from "./PAGES/LANDING/Sidebar/profiles/Profile";
+import ResetTable from "./PAGES/LANDING/Sidebar/PasswordReset/ResetTable";
 import Layout from "./PAGES/LANDING/LAYOUT/Layout";
 
 import ResetPasswordWithSecurityQuestion from "./PAGES/AUTH/ResetPasswordWithSecurityQuestion";
 import SignUp from "./PAGES/AUTH/SignUp";
-import DashBoard from "./PAGES/DASHBOARD/DashBoard";
+import DashBoard from "./PAGES/LANDING/Sidebar/DASHBOARD/DashBoard";
+import Reports from "./PAGES/LANDING/Sidebar/reports/Reports";
+import AssetsForm1 from "./PAGES/LANDING/Sidebar/NEW ASSETS/AssetsForm1";
 
 // Flatten nested colors to key-value pairs for CSS variables
 const flattenColors = Object.entries(colors).reduce(
@@ -72,12 +74,14 @@ export default function App() {
           />{" "}
           {/* here the above path is directly rendering a ui form but later on u should make a page which can be called dynamically to render all thee kind o f form don not use teh form directly in the pages as to make them re-useable */}
           {/* this is a tempory elemt s */}
-          <Route path="/colorsTempo" element={<ColorPalette />} />
           <Route element={<Layout />}>
+          <Route path="/colorsTempo" element={<ColorPalette />} />
             <Route path="/landing" element={<LandingSample />} />
             <Route path="/resets" element={<ResetTable />} />
             <Route path="/profile" element={<SampleTable />} />
             <Route path="/dashboard" element={<DashBoard />} />
+            <Route path="/reports" element={<Reports />} />
+            <Route path="/newAssets" element={<AssetsForm1/>}/>
           </Route>
         </Routes>
       

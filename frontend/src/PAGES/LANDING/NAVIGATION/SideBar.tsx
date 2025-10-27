@@ -22,7 +22,7 @@ import {
 import { KeyRound } from "lucide-react";
 import { check } from "zod";
 import { Link } from "react-router-dom";
-import { useAppContext } from "../GLOBAL CONTEXT/GlobalContext";
+import { useAppContext } from "../../../CustomComponents/GLOBAL CONTEXT/GlobalContext";
 // Sidebar Component (Laptop/Desktop Oriented)
 export const SideBar = () => {
   
@@ -34,7 +34,7 @@ const open =state.open;
     { name: "Profile", icon: <User />, link: "/profile" },
     { name: "Colors", icon: <Database />, link: "/colorsTempo" },
     { name: "Complaints ", icon: <Wrench />, link: "#" },
-    { name: "Tasks", icon: <Laptop />, link: "#" },
+    { name: "new assets", icon: <Laptop />, link: "/newAssets" },
     { name: "Resets", icon: <KeyRound />, link: "/resets", count: 5 ,check:true},
     { name: "Reports", icon: <BarChart2 />, link: "/reports" },
     { name: "Notifications", icon: <Bell />, link: "#" },

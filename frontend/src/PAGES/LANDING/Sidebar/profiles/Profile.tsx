@@ -1,7 +1,7 @@
 import React from 'react'
-import { TableRenderer } from './default table/TableRenderer'
-import { columns } from './default table/Colums'
-import { Data } from './default table/Data' 
+import { TableRenderer } from '../../../../CustomComponents/Tables/default table/TableRenderer'
+import { columns } from '../../../../CustomComponents/Tables/default table/Colums'
+import { Data } from '../../../../CustomComponents/Tables/default table/Data' 
 
 export default function SampleTable() {
   return (

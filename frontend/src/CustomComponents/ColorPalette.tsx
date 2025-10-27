@@ -15,7 +15,7 @@ export const ColorPalette: React.FC = () => {
   };
 
   return (
-    <div className="p-8 bg-amber-200 mt-[1800px]">
+    <div className="p-8 bg-amber-200 ">
       <h1 className="text-3xl font-bold mb-6">Website Color Palette</h1>
 
       {Object.entries(colors).map(([category, group]) => (

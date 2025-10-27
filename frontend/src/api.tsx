@@ -10,7 +10,7 @@ export const loginUser = async (id: string, password: string) => {
     return response.data; // contains { success, message }
 
 } catch (err: any) {
-    alert("error")
+    alert("server not connected")
     return { success: false, message: err.response?.data?.message || err.message };
   }
 };

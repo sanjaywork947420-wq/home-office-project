@@ -1,6 +1,6 @@
 import { useAppContext } from '@/CustomComponents/GLOBAL CONTEXT/GlobalContext';
-import { NavBar } from '@/CustomComponents/NAVIGATION/NavBar'
-import { SideBar } from '@/CustomComponents/NAVIGATION/SideBar'
+import { NavBar } from '@/PAGES/LANDING/NAVIGATION/NavBar'
+import { SideBar } from '@/PAGES/LANDING/NAVIGATION/SideBar'
 import "./layout.css"
 import React from 'react'
 import { Outlet } from 'react-router-dom'
@@ -28,7 +28,8 @@ export default function Layout() {
         <SideBar/>
       </div>
 
-      <div className="outlet bg-blue-400 ">
+      <div className="outlet bg-blue-700 overflow-scroll ">
+        bwlow is outlet
         <Outlet/>
       </div>
     </motion.div>

@@ -4,8 +4,8 @@ import Button1 from '../../CustomComponents/Button1'
 import SmallForm from '../../CustomComponents/FORMS/SmallForm'
 
   import LoginForm from '../../CustomComponents/FORMS/LoginForm'
-import { SideBar } from '../../CustomComponents/NAVIGATION/SideBar'
-import { NavBar } from '../../CustomComponents/NAVIGATION/NavBar'
+import { SideBar } from '../LANDING/NAVIGATION/SideBar'
+import { NavBar } from '../LANDING/NAVIGATION/NavBar'
 export default function Home() {
   function onclick(){
    
