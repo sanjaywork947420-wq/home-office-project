@@ -12,7 +12,7 @@ export default function Layout() {
   return (
     
    <motion.div
-  className="grid h-[100vh] grid-rows-[60px_1fr] overflow-hidden"
+  className="grid h-[100vh] grid-rows-[60px_1fr] overflow-hidden layout"
   animate={{ gridTemplateColumns: open ? "260px 1fr" : "70px 1fr" }}
   transition={{ type: "spring", stiffness: 200, damping: 25 }}
 >
@@ -24,7 +24,7 @@ export default function Layout() {
 
       </div>
 
-      <div className="sidebar  bg-red-200">
+      <div className="sidebar  bg-red-600">
         <SideBar/>
       </div>
 

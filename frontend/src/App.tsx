@@ -79,8 +79,8 @@ export default function App() {
             <Route path="/landing" element={<LandingSample />} />
             <Route path="/resets" element={<ResetTable />} />
             <Route path="/profile" element={<SampleTable />} />
-            <Route path="/dashboard" element={<DashBoard />} />
             <Route path="/reports" element={<Reports />} />
+            <Route path="/dashboard" element={<DashBoard />} />
             <Route path="/newAssets" element={<AssetsForm1/>}/>
           </Route>
         </Routes>

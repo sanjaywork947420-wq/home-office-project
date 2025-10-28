@@ -5,7 +5,7 @@ import { SideBar } from './NAVIGATION/SideBar'
 
 export default function LandingSample() {
   return (
-    <div>
+    <div className='overflow-hidden'>
          
      this is just a overlay for other elements
 

@@ -48,6 +48,7 @@ export default function AssetsForm1() {
   }
   const [formdata, setformdata] = useState({
     type: "hardware",
+    deviceType:"",
 
     Details: {
       hardwareDetails: {
@@ -89,7 +90,7 @@ export default function AssetsForm1() {
   let arr=[1,2,"jara"]
 
   return (
-    <div className="bg-red-200 flex flex-col items-center justify-center h-[80%] overflow-hidden">
+    <div className="bg-red-400 flex flex-col items-center justify-center  ">
       <h1 className="mb-6">registration of assest steps {steps}</h1>
 
       {steps == 1 && (
@@ -140,7 +141,7 @@ export default function AssetsForm1() {
                 <SelectValue placeholder="select the device" />
               </SelectTrigger>
 
-              {/* ✅ Always one SelectContent */}
+            
               <SelectContent>
                 {(optionsMap[formdata.type] || []).map((opt) => (
                   <SelectItem key={opt.value} value={opt.value}>
@@ -171,7 +172,7 @@ export default function AssetsForm1() {
       )}
 
       {steps == 2 && (
-       <RegisterItems arr={arr}/>
+       <RegisterItems arr={arr} formdata={formdata} next={next} prev={prev}/>
       )}
 
       {steps == 3 && (
