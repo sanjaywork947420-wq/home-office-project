@@ -40,6 +40,7 @@ export default function ApplyPasswordReset() {
 
   return (
     // form container starts
+    <div className="flex h-[100vh] bg-bg-contrast justify-center items-center">
     <Form {...form}>
       <form
         onSubmit={form.handleSubmit(onSubmit)}
@@ -83,5 +84,6 @@ export default function ApplyPasswordReset() {
         </span>
       </form>
     </Form>
+    </div>
   );
 }

@@ -6,7 +6,6 @@ import { Button } from "@/components/ui/button";
 import {
   Form,
   FormControl,
-  FormDescription,
   FormField,
   FormItem,
   FormLabel,
@@ -14,18 +13,15 @@ import {
 } from "@/components/ui/form";
 import { Input } from "@/components/ui/input";
 import styles from "./SmallForm.module.css";
-import { Link } from "react-router-dom";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import FallingWord from "./FallingWord";
-import { loginUser } from "@/api";
 
-// schema
+// 🧩 Validation schema
 const formSchema = z.object({
-  personalID: z.string().min(2).max(50),
-  password: z.string().min(5).max(14),
+  personalID: z.string().min(2, "Enter valid Personal ID").max(50),
+  password: z.string().min(5, "Password must be at least 5 characters").max(20),
 });
 
-// function component
 export default function LoginForm() {
   const navigate = useNavigate();
 
@@ -37,58 +33,71 @@ export default function LoginForm() {
     },
   });
 
+  // ✅ Backend connection
   async function onSubmit(values: any, e: React.FormEvent) {
-    console.log(e);
     e.preventDefault();
     const { personalID, password } = values;
-    console.log(personalID);
-    const result = await loginUser(personalID, password);
-    alert("access given but not as login user")
 
-    navigate("/landing");
+    try {
+      const res = await fetch("http://localhost:3000/login", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ personalID, password }),
+      });
+
+      const data = await res.json();
+
+      // ✅ Handle responses based on backend logic
+      if (res.ok && data.success) {
+        alert("✅ Login successful!");
+        navigate("/landing");
+      } else if (data.message?.includes("not found")) {
+        alert("❌ Personal ID not found. Please sign up first.");
+      } else if (data.message?.includes("Password")) {
+        alert("❌ Incorrect password. Try again.");
+      } else {
+        alert(data.message || "❌ Login failed. Please try again.");
+      }
+    } catch (error) {
+      console.error("Login error:", error);
+      alert("⚠️ Unable to connect to server. Try again later.");
+    }
   }
 
   return (
-    // form container starts
     <Form {...form}>
       <form
         onSubmit={form.handleSubmit(onSubmit)}
-        className={`${styles.formContainer} space-y-4 rounded bg-pink-500 w-[350px]`}
+        className={`${styles.formContainer} space-y-4 rounded bg-white shadow-md w-[350px] p-4`}
       >
-        {/* <h1 className={`${styles.title} text-title `}>login form</h1> */}
+        <FallingWord text="Welcome to CRM" />
 
-        <FallingWord text="Welcome to crm" />
-        {/* <h2 className='justify-content-start'>login or create a account</h2> */}
-        {/* personalID form item */}
+        {/* Personal ID */}
         <FormField
           control={form.control}
           name="personalID"
           render={({ field }) => (
             <FormItem className={`${styles.formItem} text-title`}>
-              <FormLabel className={`${styles.formLabel} text-title`}>
-                Personal ID
-              </FormLabel>
+              <FormLabel>Personal ID</FormLabel>
               <FormControl>
                 <Input
-                  placeholder="Enter personal ID"
+                  placeholder="Enter your Personal ID"
                   {...field}
                   className={`${styles.formInput}`}
                 />
               </FormControl>
-
-              <FormMessage className={`${styles.formMessage}`} />
+              <FormMessage />
             </FormItem>
           )}
         />
-        {/* password form item */}
+
+        {/* Password */}
         <FormField
           control={form.control}
           name="password"
           render={({ field }) => (
             <FormItem className={`${styles.formItem} text-title`}>
-              <FormLabel className={`${styles.formLabel} text-title`}>
-                Password
-              </FormLabel>
+              <FormLabel>Password</FormLabel>
               <FormControl>
                 <Input
                   type="password"
@@ -97,34 +106,30 @@ export default function LoginForm() {
                   className={`${styles.formInput}`}
                 />
               </FormControl>
-
-              <FormMessage className={`${styles.formMessage}`} />
+              <FormMessage />
             </FormItem>
           )}
         />
 
         <Link
           to="/forgot-password"
-          className="text-sm text-blue-500 w-[80%] hover:underline mr-auto"
+          className="text-sm text-blue-500 hover:underline"
         >
           Forgot password?
         </Link>
-        <span className="flex justify-between w-[100%]">
-          <Button
-            type="submit"
-            className={`${styles.submitButton} cursor-pointer`}
+
+        <div className="flex justify-between items-center w-full pt-2">
+          <Link
+            to="/signup"
+            className="text-[15px] text-blue-800 font-medium hover:underline"
           >
+            New user?
+          </Link>
+
+          <Button type="submit" className="cursor-pointer bg-amber-500">
             Login
           </Button>
-          <span>
-            <Link
-              to="/signup"
-              className="text-[15px] text-blue-800 font-medium w-[80%] hover:underline mr-auto"
-            >
-              New user?
-            </Link>
-          </span>
-        </span>
+        </div>
       </form>
     </Form>
   );

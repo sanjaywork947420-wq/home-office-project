@@ -13,7 +13,7 @@ export default function Home() {
  
   return (
     <div>
-      <div className="flex  min-h-svh flex-col items-center justify-center home">
+      <div className="flex bg-[#111827]  min-h-svh flex-col items-center justify-center home">
       {/* <Button1 onClick1={onclick}></Button1> */}
 
       <LoginForm/><br />

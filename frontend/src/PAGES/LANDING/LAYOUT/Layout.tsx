@@ -28,8 +28,8 @@ export default function Layout() {
         <SideBar/>
       </div>
 
-      <div className="outlet bg-blue-700 overflow-scroll ">
-        bwlow is outlet
+      <div className="outlet bg-[#FFE7CC] overflow-scroll ">
+       
         <Outlet/>
       </div>
     </motion.div>

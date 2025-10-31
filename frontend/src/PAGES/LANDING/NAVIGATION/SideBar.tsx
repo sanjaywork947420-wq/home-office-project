@@ -33,13 +33,11 @@ const open =state.open;
     { name: "Dashboard", icon: <Home />, link: "/dashboard" },
     { name: "Profile", icon: <User />, link: "/profile" },
     { name: "Colors", icon: <Database />, link: "/colorsTempo" },
-    { name: "Complaints ", icon: <Wrench />, link: "#" },
+    { name: "Complaints ", icon: <Wrench />, link: "/complaint" },
     { name: "new assets", icon: <Laptop />, link: "/newAssets" },
     { name: "Resets", icon: <KeyRound />, link: "/resets", count: 5 ,check:true},
     { name: "Reports", icon: <BarChart2 />, link: "/reports" },
     { name: "Notifications", icon: <Bell />, link: "#" },
-    
-   
     { name: "Network Monitoring", icon: <Network />, link: "#" },
   ];
 

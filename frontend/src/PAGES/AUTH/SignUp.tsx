@@ -4,7 +4,7 @@ import SignupForm from '../../CustomComponents/FORMS/SignupForm'
 
 export default function SignUp() {
   return (
-    <div>
+    <div className='flex h-[100vh] justify-center items-center bg-bg-contrast'>
         <SignupForm/>
     </div>
   )

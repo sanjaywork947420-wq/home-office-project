@@ -19,6 +19,7 @@ import SignUp from "./PAGES/AUTH/SignUp";
 import DashBoard from "./PAGES/LANDING/Sidebar/DASHBOARD/DashBoard";
 import Reports from "./PAGES/LANDING/Sidebar/reports/Reports";
 import AssetsForm1 from "./PAGES/LANDING/Sidebar/NEW ASSETS/AssetsForm1";
+import ComplaintForm from "./PAGES/LANDING/Sidebar/COMPLAINT/ComplaintForm";
 
 // Flatten nested colors to key-value pairs for CSS variables
 const flattenColors = Object.entries(colors).reduce(
@@ -82,6 +83,7 @@ export default function App() {
             <Route path="/reports" element={<Reports />} />
             <Route path="/dashboard" element={<DashBoard />} />
             <Route path="/newAssets" element={<AssetsForm1/>}/>
+            <Route path="/complaint" element={<ComplaintForm/>}/>
           </Route>
         </Routes>
       

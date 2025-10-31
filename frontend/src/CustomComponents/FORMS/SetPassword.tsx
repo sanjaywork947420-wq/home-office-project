@@ -73,6 +73,7 @@ export default function SetPassword() {
   return (
     // form container starts
     <Form {...form}>
+   
       <form
         onSubmit={form.handleSubmit(onSubmit)}
         className={`${styles.formContainer} space-y-4 rounded w-[350px]`}
